@@ -145,11 +145,11 @@ def parse_command(message):
     command = message.text
     if player is None:
         bot.send_message(message.chat.id,
-                         "Пошел нахуй, ноунейм")
+                         "Вы не зарегистрированы в текущей игре")
         return
     if player.status == PlayerStatuses.SPECTATOR.value:
         bot.send_message(message.chat.id,
-                         "Вы вне игры")
+                         "Вы наблюдате за игрой, так как банкрот")
         return
     if player.state == PlayerStates.DEFAULT.value:
         if command == "Перевод игроку":
